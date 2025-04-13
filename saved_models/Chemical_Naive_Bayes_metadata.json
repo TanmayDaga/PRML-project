@@ -1,0 +1,8 @@
+{
+    "model_name": "Naive Bayes",
+    "sector_name": "Chemical",
+    "accuracy": 0.5333333333333333,
+    "timestamp": "2025-04-20T11:04:07.794851",
+    "model_path": "saved_models/Chemical_Naive_Bayes.joblib",
+    "vectorizer_path": "saved_models/Chemical_Naive_Bayes_vectorizer.joblib"
+}

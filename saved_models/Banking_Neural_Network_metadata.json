@@ -1,0 +1,8 @@
+{
+    "model_name": "Neural Network",
+    "sector_name": "Banking",
+    "accuracy": 0.3888888888888889,
+    "timestamp": "2025-04-20T11:04:06.575307",
+    "model_path": "saved_models/Banking_Neural_Network.joblib",
+    "vectorizer_path": "saved_models/Banking_Neural_Network_vectorizer.joblib"
+}

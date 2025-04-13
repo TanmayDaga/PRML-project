@@ -1,0 +1,8 @@
+{
+    "model_name": "Neural Network",
+    "sector_name": "Arms_Defense",
+    "accuracy": 1.0,
+    "timestamp": "2025-04-20T11:04:06.185530",
+    "model_path": "saved_models/Arms_Defense_Neural_Network.joblib",
+    "vectorizer_path": "saved_models/Arms_Defense_Neural_Network_vectorizer.joblib"
+}

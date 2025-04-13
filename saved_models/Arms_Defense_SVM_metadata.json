@@ -1,0 +1,8 @@
+{
+    "model_name": "SVM",
+    "sector_name": "Arms_Defense",
+    "accuracy": 1.0,
+    "timestamp": "2025-04-20T11:04:10.388533",
+    "model_path": "saved_models/Arms_Defense_SVM.joblib",
+    "vectorizer_path": "saved_models/Arms_Defense_SVM_vectorizer.joblib"
+}

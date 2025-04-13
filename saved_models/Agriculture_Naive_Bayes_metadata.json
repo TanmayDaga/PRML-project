@@ -1,0 +1,8 @@
+{
+    "model_name": "Naive Bayes",
+    "sector_name": "Agriculture",
+    "accuracy": 0.6875,
+    "timestamp": "2025-04-20T11:04:07.390428",
+    "model_path": "saved_models/Agriculture_Naive_Bayes.joblib",
+    "vectorizer_path": "saved_models/Agriculture_Naive_Bayes_vectorizer.joblib"
+}

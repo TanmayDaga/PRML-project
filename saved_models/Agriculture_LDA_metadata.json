@@ -1,0 +1,8 @@
+{
+    "model_name": "LDA",
+    "sector_name": "Agriculture",
+    "accuracy": 0.6875,
+    "timestamp": "2025-04-20T11:04:03.534587",
+    "model_path": "saved_models/Agriculture_LDA.joblib",
+    "vectorizer_path": "saved_models/Agriculture_LDA_vectorizer.joblib"
+}

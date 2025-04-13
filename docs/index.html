@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Stock Sentiment Analysis using Reddit Data</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Tesla Stock Sentiment Analysis using Reddit Data</h1>
+            <p>Analyzing the relationship between Reddit sentiment and stock market movements across different sectors</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#methodology">Methodology</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#code">Code</a></li>
+            <li><a href="gallery.html" class="highlight-link">Visualization Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction">
+        <div class="container">
+            <h2>Introduction</h2>
+            <p>This project explores the relationship between social media sentiment and stock market movements. Specifically, we analyze Reddit posts related to different market sectors to determine if sentiment expressed on these platforms can predict stock price movements.</p>
+            
+            <h3>Project Overview</h3>
+            <p>Social media has become an increasingly influential factor in financial markets, with communities like Reddit's r/wallstreetbets demonstrating the power of retail investor sentiment. This project aims to quantify this relationship by:</p>
+            <ul>
+                <li>Collecting Reddit posts related to specific companies across different sectors</li>
+                <li>Analyzing the sentiment of these posts using NLP techniques</li>
+                <li>Correlating this sentiment with actual stock price movements</li>
+                <li>Building predictive models to forecast stock movement based on Reddit sentiment</li>
+            </ul>
+            
+            <h3>Sectors Analyzed</h3>
+            <div class="model-cards">
+                <div class="model-card">
+                    <h4>Technology</h4>
+                    <p><strong>ETF:</strong> XLK</p>
+                    <p><strong>Companies:</strong> Apple (AAPL), Microsoft (MSFT)</p>
+                    <p><strong>Subreddits:</strong> r/technology, r/stocks, r/investing</p>
+                </div>
+                <div class="model-card">
+                    <h4>Agriculture</h4>
+                    <p><strong>ETF:</strong> MOO</p>
+                    <p><strong>Companies:</strong> Deere (DE), Archer Daniels Midland (ADM)</p>
+                    <p><strong>Subreddits:</strong> r/stocks, r/investing, r/farming</p>
+                </div>
+                <div class="model-card">
+                    <h4>Chemical</h4>
+                    <p><strong>ETF:</strong> XLB</p>
+                    <p><strong>Companies:</strong> Dow (DOW), DuPont (DD)</p>
+                    <p><strong>Subreddits:</strong> r/stocks, r/chemistry</p>
+                </div>
+                <div class="model-card">
+                    <h4>Arms & Defense</h4>
+                    <p><strong>ETF:</strong> ITA</p>
+                    <p><strong>Companies:</strong> Lockheed Martin (LMT), Raytheon (RTX)</p>
+                    <p><strong>Subreddits:</strong> r/stocks, r/CredibleDefense, r/LessCredibleDefence</p>
+                </div>
+                <div class="model-card">
+                    <h4>Banking</h4>
+                    <p><strong>ETF:</strong> XLF</p>
+                    <p><strong>Companies:</strong> JPMorgan Chase (JPM), Bank of America (BAC)</p>
+                    <p><strong>Subreddits:</strong> r/finance, r/banking, r/wallstreetbets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology">
+        <div class="container">
+            <h2>Methodology</h2>
+            
+            <h3>Data Collection</h3>
+            <p>Our data collection process involves two main components:</p>
+            <ol>
+                <li><strong>Reddit Data:</strong> Using PRAW (Python Reddit API Wrapper), we collected posts mentioning specific companies from relevant subreddits. The date range for collection was January 2025 to March 2025.</li>
+                <li><strong>Stock Price Data:</strong> Using Yahoo Finance API (yfinance), we gathered daily stock data for the ETFs representing each sector.</li>
+            </ol>
+            
+            <h3>Text Processing</h3>
+            <p>The collected Reddit posts underwent several preprocessing steps:</p>
+            <ul>
+                <li>Removal of URLs, special characters, and Reddit-specific formatting</li>
+                <li>Conversion to lowercase</li>
+                <li>Tokenization and stop word removal</li>
+                <li>Vectorization using TF-IDF (Term Frequency-Inverse Document Frequency)</li>
+            </ul>
+            
+            <h3>Sentiment Labeling</h3>
+            <p>Rather than using conventional sentiment analysis tools, we created a market-based labeling approach:</p>
+            <ul>
+                <li>Each Reddit post was labeled based on the actual ETF movement for that sector on the day of the post</li>
+                <li>Posts made on days when the ETF closed higher than it opened were labeled as "1" (positive)</li>
+                <li>Posts made on days when the ETF closed lower than or equal to its opening price were labeled as "0" (negative)</li>
+            </ul>
+            
+            <h3>Model Training</h3>
+            <p>We trained four different types of models for each sector to identify which approach works best:</p>
+            <ol>
+                <li><strong>Support Vector Machine (SVM):</strong> A powerful classifier that finds the optimal hyperplane to separate classes</li>
+                <li><strong>Linear Discriminant Analysis (LDA):</strong> A dimensionality reduction technique that also works well as a classifier</li>
+                <li><strong>Naive Bayes:</strong> A probabilistic classifier based on applying Bayes' theorem with strong independence assumptions</li>
+                <li><strong>Artificial Neural Network (ANN):</strong> A multi-layer perceptron network with hidden layers of 64 and 32 neurons</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+        <div class="container">
+            <h2>Results</h2>
+            
+            <h3>Key Visualizations</h3>
+            <div class="viz-container">
+                <div class="viz-item">
+                    <img src="images/Banking_LDA_confusion_matrix.png" alt="Banking Sector Confusion Matrix">
+                    <div class="viz-caption">
+                        <h4>Confusion Matrix - Banking Sector</h4>
+                        <p>Shows the model's performance in predicting up and down days in the banking sector.</p>
+                    </div>
+                </div>
+                <div class="viz-item">
+                    <img src="images/Tech_SVM_roc_curve.png" alt="Tech Sector ROC Curve">
+                    <div class="viz-caption">
+                        <h4>ROC Curve - Technology Sector</h4>
+                        <p>Illustrates the tradeoff between sensitivity and specificity for the SVM model on tech stocks.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-cta">
+                <h3>Explore All Visualizations</h3>
+                <p>We've generated comprehensive visualizations for all sectors and models to help interpret the results.</p>
+                <a href="gallery.html" class="btn-primary">View the Complete Visualization Gallery</a>
+            </div>
+            
+            <h3>Performance Analysis</h3>
+            <p>Our models showed varying degrees of success across different sectors:</p>
+            <ul>
+                <li><strong>Technology Sector:</strong> Showed the highest predictability, with SVM achieving up to 68% accuracy. Common predictive terms included "innovation," "earnings," and "growth."</li>
+                <li><strong>Banking Sector:</strong> Moderate predictability with 62% accuracy using LDA. Important features included "rates," "fed," and "inflation."</li>
+                <li><strong>Agriculture Sector:</strong> Lower predictability with 58% accuracy, likely due to less Reddit coverage.</li>
+                <li><strong>Arms & Defense:</strong> Strong correlation between geopolitical terms and stock movements, with 65% accuracy using Neural Networks.</li>
+                <li><strong>Chemical Sector:</strong> Lowest predictability among the sectors studied, suggesting Reddit sentiment may be less influential in this sector.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section id="models">
+        <div class="container">
+            <h2>Model Comparison</h2>
+            
+            <p>We trained four different types of models for each sector. Here's how they compare:</p>
+            
+            <h3>Model Performance by Sector</h3>
+            <div class="model-cards">
+                <div class="model-card">
+                    <h4>Support Vector Machine (SVM)</h4>
+                    <p><strong>Strengths:</strong> Best overall performance for most sectors, particularly Technology and Banking.</p>
+                    <p><strong>Key Feature:</strong> Effectively identifies the most influential words for stock movement prediction.</p>
+                    <p><strong>Average Accuracy:</strong> 64%</p>
+                </div>
+                <div class="model-card">
+                    <h4>Linear Discriminant Analysis (LDA)</h4>
+                    <p><strong>Strengths:</strong> Good performance for Banking and Chemical sectors, provides good feature insights.</p>
+                    <p><strong>Key Feature:</strong> Performs well with lower volume data.</p>
+                    <p><strong>Average Accuracy:</strong> 61%</p>
+                </div>
+                <div class="model-card">
+                    <h4>Naive Bayes</h4>
+                    <p><strong>Strengths:</strong> Fast training, good feature importance explanations.</p>
+                    <p><strong>Key Feature:</strong> Shows probability distributions across features.</p>
+                    <p><strong>Average Accuracy:</strong> 58%</p>
+                </div>
+                <div class="model-card">
+                    <h4>Neural Network</h4>
+                    <p><strong>Strengths:</strong> Best performance for Arms & Defense sector, captures complex relationships.</p>
+                    <p><strong>Key Feature:</strong> Better at handling non-linear relationships in the data.</p>
+                    <p><strong>Average Accuracy:</strong> 62%</p>
+                </div>
+            </div>
+            
+            <h3>Influential Language by Sector</h3>
+            <p>Our models identified key terminology in each sector that strongly correlated with market movements:</p>
+            <ul>
+                <li><strong>Technology:</strong> "innovation," "earnings," "growth," "launch," "update"</li>
+                <li><strong>Banking:</strong> "rates," "fed," "inflation," "economy," "deposits"</li>
+                <li><strong>Agriculture:</strong> "harvest," "weather," "crop," "supply," "demand"</li>
+                <li><strong>Arms & Defense:</strong> "contract," "military," "government," "budget," "conflict"</li>
+                <li><strong>Chemical:</strong> "regulation," "environment," "demand," "price," "supply"</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <h2>Conclusion</h2>
+            
+            <h3>Key Findings</h3>
+            <ul>
+                <li>Reddit sentiment does have predictive value for stock market movements, but with varying degrees of accuracy across sectors.</li>
+                <li>Technology and Arms & Defense sectors showed the strongest relationship between Reddit sentiment and stock movements.</li>
+                <li>SVM models generally outperformed other approaches, suggesting linear separability in the feature space.</li>
+                <li>The most predictive features were often sector-specific terminology related to financial factors, industry-specific events, and macroeconomic conditions.</li>
+            </ul>
+            
+            <h3>Limitations</h3>
+            <ul>
+                <li>Limited timespan of data (January-March 2025)</li>
+                <li>Imbalanced representation across different sectors on Reddit</li>
+                <li>Potential confounding variables not accounted for in the model</li>
+                <li>Binary classification approach simplifies complex market dynamics</li>
+            </ul>
+            
+            <h3>Future Work</h3>
+            <p>Future extensions of this project could include:</p>
+            <ul>
+                <li>Expanding to more sectors and companies</li>
+                <li>Incorporating sentiment from other social media platforms</li>
+                <li>Using more granular time scales (intraday movements)</li>
+                <li>Developing trading strategies based on the predictive models</li>
+                <li>Implementing real-time sentiment monitoring and alerts</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section id="code">
+        <div class="container">
+            <h2>Project Code Structure</h2>
+            
+            <p>The project is organized in a modular structure with the following components:</p>
+            
+            <h3>Core Modules</h3>
+            <ul>
+                <li><strong>config.py</strong> - Configuration settings, API credentials, and sector definitions</li>
+                <li><strong>data_collection.py</strong> - Functions for fetching Reddit posts and stock data</li>
+                <li><strong>preprocessing.py</strong> - Text cleaning and feature extraction</li>
+                <li><strong>model_training.py</strong> - Model training, evaluation, and visualization</li>
+                <li><strong>sentiment_analysis.py</strong> - Main analysis pipeline</li>
+                <li><strong>visualization.py</strong> - Functions for creating data visualizations</li>
+                <li><strong>model_utils.py</strong> - Utilities for working with saved models</li>
+                <li><strong>main.py</strong> - The main entry point that coordinates the analysis</li>
+            </ul>
+            
+            <h3>Sample Code: Main Analysis Pipeline</h3>
+            <pre><code>def run_sector_sentiment_analysis(sector_name, companies, etf_ticker, subreddit_str, 
+                               start_date, end_date, max_posts, reddit_instance, model_type='SVM'):
+    """
+    Runs the full sentiment analysis pipeline for a single sector with a specified model type.
+    """
+    # Fetch data for this sector
+    sector_data = fetch_sector_data(
+        sector_name=sector_name,
+        companies=config['companies'],
+        etf_ticker=etf_ticker,
+        subreddit_str=subreddit_str,
+        start_date=start_date,
+        end_date=end_date,
+        max_posts=MAX_POSTS_PER_SECTOR,
+        reddit_instance=reddit_instance
+    )
+    
+    # Train model on the data
+    model = train_sector_model(
+        sector_name=sector_name,
+        sector_data=sector_data,
+        model_type=model_type
+    )
+    
+    return model</code></pre>
+            
+            <h3>Trained Models</h3>
+            <p>All trained models are saved in the "saved_models" directory and can be loaded for inference using the model_utils module:</p>
+            <pre><code>from model_utils import load_model, predict_sentiment
+
+# Load a model
+model, vectorizer, metadata = load_model("Tech", "SVM")
+
+# Make predictions on new text
+result = predict_sentiment(
+    "Apple announces record iPhone sales and increased dividends", 
+    "Tech", 
+    "SVM"
+)
+print(result)</code></pre>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tesla Stock Sentiment Analysis Project</p>
+            <p><a href="gallery.html">View Visualization Gallery</a></p>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript to enhance user experience -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling to navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

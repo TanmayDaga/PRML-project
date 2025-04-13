@@ -1,0 +1,8 @@
+{
+    "model_name": "LDA",
+    "sector_name": "Arms_Defense",
+    "accuracy": 1.0,
+    "timestamp": "2025-04-20T11:04:04.154383",
+    "model_path": "saved_models/Arms_Defense_LDA.joblib",
+    "vectorizer_path": "saved_models/Arms_Defense_LDA_vectorizer.joblib"
+}

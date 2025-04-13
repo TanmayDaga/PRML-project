@@ -1,0 +1,8 @@
+{
+    "model_name": "Neural Network",
+    "sector_name": "Tech",
+    "accuracy": 0.525,
+    "timestamp": "2025-04-20T11:04:04.926261",
+    "model_path": "saved_models/Tech_Neural_Network.joblib",
+    "vectorizer_path": "saved_models/Tech_Neural_Network_vectorizer.joblib"
+}

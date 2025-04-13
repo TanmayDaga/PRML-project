@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization Gallery - Tesla Stock Sentiment Analysis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Visualization Gallery</h1>
+            <p>Comprehensive collection of visualizations from the Tesla Stock Sentiment Analysis project</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#confusion-matrices">Confusion Matrices</a></li>
+            <li><a href="#roc-curves">ROC Curves</a></li>
+            <li><a href="#feature-space">Feature Space</a></li>
+            <li><a href="#feature-importance">Feature Importance</a></li>
+            <li><a href="#precision-recall">Precision-Recall</a></li>
+        </ul>
+    </nav>
+
+    <!-- Intro Section -->
+    <section class="intro-gallery">
+        <div class="container">
+            <h2>Visualization Collection</h2>
+            <p>This gallery presents all the visualizations generated during the sentiment analysis project. The plots are organized by type and sector to provide a comprehensive view of the results.</p>
+            <p><small>Click on any image to view it in full size.</small></p>
+        </div>
+    </section>
+
+    <!-- Confusion Matrices Section -->
+    <section id="confusion-matrices" class="gallery-section">
+        <div class="container">
+            <h2>Confusion Matrices</h2>
+            <p>Confusion matrices showing the performance of each model across different sectors. These visualizations display the true positive, true negative, false positive, and false negative results along with key performance metrics.</p>
+            
+            <div class="gallery-grid">
+                <!-- Tech Sector -->
+                <div class="gallery-category">
+                    <h3>Technology Sector</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Tech_SVM_confusion_matrix.png" alt="SVM Confusion Matrix for Tech Sector">
+                            <div class="gallery-caption">SVM Model</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Tech_LDA_confusion_matrix.png" alt="LDA Confusion Matrix for Tech Sector">
+                            <div class="gallery-caption">LDA Model</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Tech_Naive_Bayes_confusion_matrix.png" alt="Naive Bayes Confusion Matrix for Tech Sector">
+                            <div class="gallery-caption">Naive Bayes Model</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Tech_Neural_Network_confusion_matrix.png" alt="Neural Network Confusion Matrix for Tech Sector">
+                            <div class="gallery-caption">Neural Network Model</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Banking Sector -->
+                <div class="gallery-category">
+                    <h3>Banking Sector</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Banking_SVM_confusion_matrix.png" alt="SVM Confusion Matrix for Banking Sector">
+                            <div class="gallery-caption">SVM Model</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Banking_LDA_confusion_matrix.png" alt="LDA Confusion Matrix for Banking Sector">
+                            <div class="gallery-caption">LDA Model</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Banking_Naive_Bayes_confusion_matrix.png" alt="Naive Bayes Confusion Matrix for Banking Sector">
+                            <div class="gallery-caption">Naive Bayes Model</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Banking_Neural_Network_confusion_matrix.png" alt="Neural Network Confusion Matrix for Banking Sector">
+                            <div class="gallery-caption">Neural Network Model</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional sectors would follow the same pattern -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ROC Curves Section -->
+    <section id="roc-curves" class="gallery-section alt-bg">
+        <div class="container">
+            <h2>ROC Curves</h2>
+            <p>Receiver Operating Characteristic curves showing the trade-off between true positive rate and false positive rate at various threshold settings. The area under the ROC curve (AUC) is a measure of how well the model can distinguish between classes.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-category">
+                    <h3>SVM Models</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Tech_SVM_roc_curve.png" alt="Tech Sector SVM ROC Curve">
+                            <div class="gallery-caption">Technology Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Banking_SVM_roc_curve.png" alt="Banking Sector SVM ROC Curve">
+                            <div class="gallery-caption">Banking Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Chemical_SVM_roc_curve.png" alt="Chemical Sector SVM ROC Curve">
+                            <div class="gallery-caption">Chemical Sector</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-category">
+                    <h3>Naive Bayes Models</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Tech_Naive_Bayes_roc_curve.png" alt="Tech Sector Naive Bayes ROC Curve">
+                            <div class="gallery-caption">Technology Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Banking_Naive_Bayes_roc_curve.png" alt="Banking Sector Naive Bayes ROC Curve">
+                            <div class="gallery-caption">Banking Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Agriculture_Naive_Bayes_roc_curve.png" alt="Agriculture Sector Naive Bayes ROC Curve">
+                            <div class="gallery-caption">Agriculture Sector</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Space Visualization Section -->
+    <section id="feature-space" class="gallery-section">
+        <div class="container">
+            <h2>Feature Space Visualizations</h2>
+            <p>Two-dimensional projections of the high-dimensional text feature space using PCA or SVD. Points are colored by sentiment label (positive/negative) to visualize how well the features separate the classes.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-category">
+                    <h3>Neural Network Feature Spaces</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Agriculture_Neural_Network_feature_space.png" alt="Agriculture Feature Space">
+                            <div class="gallery-caption">Agriculture Sector</div>
+                         </div>
+                        <div class="gallery-item">
+                            <img src="images/Tech_Neural_Network_feature_space.png" alt="Tech Feature Space">
+                            <div class="gallery-caption">Technology Sector</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-category">
+                    <h3>LDA Feature Spaces</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Banking_LDA_feature_space.png" alt="Banking LDA Feature Space">
+                            <div class="gallery-caption">Banking Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Chemical_LDA_feature_space.png" alt="Chemical LDA Feature Space">
+                            <div class="gallery-caption">Chemical Sector</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Importance Section -->
+    <section id="feature-importance" class="gallery-section alt-bg">
+        <div class="container">
+            <h2>Feature Importance & Correlations</h2>
+            <p>Visualizations showing the most important features (words) for predicting stock movements in different sectors. These plots reveal which terms have the strongest correlation with positive or negative stock price changes.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-category">
+                    <h3>Feature Correlations</h3>
+                    <div class="gallery-items">
+                        <div class="gallery-item">
+                            <img src="images/Chemical_feature_correlations.png" alt="Chemical Sector Feature Correlations">
+                            <div class="gallery-caption">Chemical Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Tech_feature_correlations.png" alt="Tech Sector Feature Correlations">
+                            <div class="gallery-caption">Technology Sector</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/Arms_Defense_feature_correlations.png" alt="Arms & Defense Sector Feature Correlations">
+                            <div class="gallery-caption">Arms & Defense Sector</div>
+                        </div>
+                    </div>
+                </div>
+           
+              
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Model Comparison Section -->
+    <section id="model-comparison" class="gallery-section alt-bg">
+        <div class="container">
+            <h2>Model Performance Comparison</h2>
+            <p>Direct comparison of different model types across sectors, showing which approach performs best for each market segment.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-items">
+                    <div class="gallery-item wide">
+                        <img src="images/Tech_model_comparison.png" alt="Tech Sector Model Comparison">
+                        <div class="gallery-caption">Technology Sector - Model Comparison</div>
+                    </div>
+                    <div class="gallery-item wide">
+                        <img src="images/Banking_model_comparison.png" alt="Banking Sector Model Comparison">
+                        <div class="gallery-caption">Banking Sector - Model Comparison</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for enlarged images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="enlargedImg">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tesla Stock Sentiment Analysis Project</p>
+            <p><a href="index.html">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for image modal functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the modal
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('enlargedImg');
+            var captionText = document.getElementById('caption');
+            var closeBtn = document.getElementsByClassName('close')[0];
+
+            // Get all gallery items
+            var galleryItems = document.querySelectorAll('.gallery-item img');
+            
+            // Add click event to all gallery items
+            galleryItems.forEach(function(img) {
+                img.onclick = function() {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    
+                    // Center the image
+                    modalImg.style.marginTop = "50px";
+                    
+                    // Add fade-in animation
+                    modal.classList.add('fade-in');
+                    
+                    // Disable body scroll when modal is open
+                    document.body.style.overflow = "hidden";
+                }
+            });
+            
+            // Close modal when clicking the × symbol
+            closeBtn.onclick = function() {
+                closeModal();
+            }
+            
+            // Close modal when clicking outside the image
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            }
+            
+            // Close modal when pressing ESC key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape") {
+                    closeModal();
+                }
+            });
+            
+            function closeModal() {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+            
+            // Add smooth scrolling to navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

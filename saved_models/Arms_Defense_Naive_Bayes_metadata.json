@@ -1,0 +1,8 @@
+{
+    "model_name": "Naive Bayes",
+    "sector_name": "Arms_Defense",
+    "accuracy": 1.0,
+    "timestamp": "2025-04-20T11:04:08.192752",
+    "model_path": "saved_models/Arms_Defense_Naive_Bayes.joblib",
+    "vectorizer_path": "saved_models/Arms_Defense_Naive_Bayes_vectorizer.joblib"
+}

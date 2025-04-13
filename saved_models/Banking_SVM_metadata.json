@@ -1,0 +1,8 @@
+{
+    "model_name": "SVM",
+    "sector_name": "Banking",
+    "accuracy": 0.2777777777777778,
+    "timestamp": "2025-04-20T11:04:10.826769",
+    "model_path": "saved_models/Banking_SVM.joblib",
+    "vectorizer_path": "saved_models/Banking_SVM_vectorizer.joblib"
+}

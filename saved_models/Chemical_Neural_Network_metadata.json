@@ -1,0 +1,8 @@
+{
+    "model_name": "Neural Network",
+    "sector_name": "Chemical",
+    "accuracy": 0.6666666666666666,
+    "timestamp": "2025-04-20T11:04:05.805301",
+    "model_path": "saved_models/Chemical_Neural_Network.joblib",
+    "vectorizer_path": "saved_models/Chemical_Neural_Network_vectorizer.joblib"
+}

@@ -1,0 +1,8 @@
+{
+    "model_name": "Naive Bayes",
+    "sector_name": "Banking",
+    "accuracy": 0.3333333333333333,
+    "timestamp": "2025-04-20T11:04:08.643571",
+    "model_path": "saved_models/Banking_Naive_Bayes.joblib",
+    "vectorizer_path": "saved_models/Banking_Naive_Bayes_vectorizer.joblib"
+}
